@@ -14,13 +14,13 @@
 - Provider 同时注册到多个 Nacos namespace
 - Consumer 优先从主 namespace 发现实例
 - 主 namespace 没有可用实例时，自动 fallback 到备用 namespace
-- 通过 Dubbo SPI 暴露 `multins-nacos://` 自定义注册中心协议
+- 通过 Dubbo SPI 暴露 `huanxin-nacos://` 自定义注册中心协议
 
 边界说明：
 
-- `multins-nacos://` 负责多空间实例注册和多空间实例消费
+- `huanxin-nacos://` 负责多空间实例注册和多空间实例消费
 - `nacos://` 仍然完全按宿主项目的原生 Dubbo/Nacos 逻辑执行
-- 如果宿主项目把 `multins-nacos://` 同时当作 metadata center 使用，元数据会默认收敛到主空间，也就是 `namespace` 的第一个值
+- 如果宿主项目把 `huanxin-nacos://` 同时当作 metadata center 使用，元数据会默认收敛到主空间，也就是 `namespace` 的第一个值
 
 ## 使用方式
 
@@ -49,7 +49,7 @@
 ```yaml
 dubbo:
   registry:
-    address: multins-nacos://127.0.0.1:8848
+    address: huanxin-nacos://127.0.0.1:8848
     username: nacos
     password: nacos
     parameters:
@@ -76,7 +76,7 @@ dubbo:
 
 元数据说明：
 
-- 这个扩展提供 `MetadataReportFactory` SPI，用于兼容 `multins-nacos://` 被同时当作 metadata center 使用的场景
+- 这个扩展提供 `MetadataReportFactory` SPI，用于兼容 `huanxin-nacos://` 被同时当作 metadata center 使用的场景
 - metadata 不做多空间广播，默认固定写入主空间，也就是 `primaryNamespace` 或 `namespace` 第一个值
 
 ## 依赖策略

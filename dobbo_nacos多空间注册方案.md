@@ -24,7 +24,7 @@
 推荐协议名：
 
 ```properties
-multins-nacos://
+huanxin-nacos://
 ```
 
 示例配置：
@@ -32,7 +32,7 @@ multins-nacos://
 ```yaml
 dubbo:
   registry:
-    address: multins-nacos://127.0.0.1:8848
+    address: huanxin-nacos://127.0.0.1:8848
     username: nacos
     password: nacos
     parameters:
@@ -94,7 +94,7 @@ dubbo:
 业务配置
    │
    ▼
-multins-nacos:// RegistryFactory
+huanxin-nacos:// RegistryFactory
    │
    ▼
 MultiNamespaceNacosRegistry
@@ -1250,7 +1250,7 @@ META-INF/dubbo/org.apache.dubbo.registry.RegistryFactory
 内容：
 
 ```properties
-multins-nacos=com.xxx.multins.nacos.registry.MultiNamespaceNacosRegistryFactory
+huanxin-nacos=com.xxx.multins.nacos.registry.MultiNamespaceNacosRegistryFactory
 ```
 
 ## 11.2 如果你要兼容 Dubbo 3 的 ServiceDiscovery
@@ -1264,7 +1264,7 @@ META-INF/dubbo/org.apache.dubbo.registry.client.ServiceDiscoveryFactory
 示例：
 
 ```properties
-multins-nacos=com.xxx.multins.nacos.registry.MultiNamespaceServiceDiscoveryFactory
+huanxin-nacos=com.xxx.multins.nacos.registry.MultiNamespaceServiceDiscoveryFactory
 ```
 
 说明：
